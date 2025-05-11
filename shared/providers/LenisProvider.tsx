@@ -19,7 +19,7 @@ export const LenisProvider = ({ children }: PropsWithChildren) => {
   }, []);
 
   return (
-    <ReactLenis root options={{ autoRaf: false, smoothWheel: false }}>
+    <ReactLenis root ref={lenisRef} options={{ autoRaf: false }}>
       {children}
     </ReactLenis>
   );
