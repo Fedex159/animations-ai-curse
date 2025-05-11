@@ -8,7 +8,12 @@ export const Section = ({
   className = "",
   ...props
 }: ComponentProps<"section">) => {
-  const { isIntersecting, ref } = useIsOnScreen();
+  const { isIntersecting, ref } = useIsOnScreen({
+    intersectionOptions: {
+      rootMargin: "0px",
+      threshold: 0.25,
+    },
+  });
   const [showClass, setShowClass] = useState("");
 
   if (isIntersecting && !showClass) {
@@ -18,7 +23,7 @@ export const Section = ({
   return (
     <section
       ref={ref}
-      className={`${className} flex min-h-dvh translate-y-5 items-center justify-center p-20 opacity-0 transition-all delay-500 ease-in ${showClass}`}
+      className={`${className} flex min-h-dvh translate-y-5 snap-start items-center justify-center p-20 opacity-0 transition-[opacity,transform] delay-500 ease-in ${showClass}`}
       {...props}
     >
       {children}
