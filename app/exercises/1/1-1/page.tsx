@@ -5,7 +5,7 @@ export default function Exercise() {
   return (
     <>
       <ScrollIndicator />
-      <main className="flex min-h-dvh flex-col">
+      <main className="flex flex-col">
         <Section className="bg-amber-300">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
           exercitationem omnis minima sequi id, doloremque nam harum, porro
